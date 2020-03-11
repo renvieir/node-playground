@@ -1,12 +1,12 @@
-const Main = require('../../src/server/main');
+const App = require('../../src/server/app');
 
-describe('Main', () => {
+describe('App', () => {
   let instance;
   // let testMocks;
 
   beforeEach(() => {
     // testMocks = {};
-    instance = new Main({
+    instance = new App({
       port: 5555,
     });
   });

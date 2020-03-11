@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const environment = require('../config/environment');
 const routes = require('../app/routes');
 const loggerMiddleware = require('../app/middlewares/logger');
 
-class Main {
+class App {
   constructor(env) {
     this.env = env;
   }
@@ -18,7 +17,7 @@ class Main {
 
   startServer() {
     this.init();
-    this.app.listen(this.env.port || 5000);
+    this.app.listen(this.env.port);
   }
 
   config() {
@@ -34,7 +33,4 @@ class Main {
   }
 }
 
-module.exports = Main;
-
-const main = new Main(environment);
-main.startServer();
+module.exports = App;
